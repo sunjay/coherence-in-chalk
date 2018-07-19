@@ -1,7 +1,6 @@
 acmart.cls
 acmart.pdf
-acmguide.pdf
-sample-*.pdf
+coherence-in-chalk.pdf
 *.log
 *.aux
 *.cfg

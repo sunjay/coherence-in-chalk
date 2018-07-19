@@ -1,4 +1,4 @@
-\documentclass[sigchi, review]{acmart}
+\documentclass[sigplan, anonymous, review]{acmart}
 
 \usepackage{booktabs} % For formal tables
 
@@ -7,13 +7,12 @@
 %\setcopyright{none}
 %\setcopyright{acmcopyright}
 %\setcopyright{acmlicensed}
-%\setcopyright{rightsretained}
+\setcopyright{rightsretained}
 %\setcopyright{usgov}
 %\setcopyright{usgovmixed}
 %\setcopyright{cagov}
-\setcopyright{licensedcagov}
 %\setcopyright{cagovmixed}
-%\setcopyright{licensedothergov}
+
 
 % DOI
 \acmDOI{10.475/123_4}
@@ -29,9 +28,15 @@
 
 \acmPrice{15.00}
 
+%\acmBadgeL[http://ctuning.org/ae/ppopp2016.html]{ae-logo}
+%\acmBadgeR[http://ctuning.org/ae/ppopp2016.html]{ae-logo}
+
+% Submission ID
+\acmSubmissionID{123-A56-BU3}
+
 
 \begin{document}
-\title{SIG Proceedings Paper in LaTeX Format}
+\title{Coherence in Chalk}
 \titlenote{Produces the permission block, and
   copyright information}
 \subtitle{Extended Abstract}
@@ -109,8 +114,10 @@
 \affiliation{\institution{The Kumquat Consortium}}
 \email{jpkumquat@consortium.net}
 
+
 % The default list of authors is too long for headers.
 \renewcommand{\shortauthors}{B. Trovato et al.}
+
 
 
 \begin{abstract}
@@ -157,16 +164,9 @@ ACM SIG Proceedings.
 
 \keywords{ACM proceedings, \LaTeX, text tagging}
 
-\begin{teaserfigure}
-  \includegraphics[width=\textwidth]{sampleteaser}
-  \caption{This is a teaser}
-  \label{fig:teaser}
-\end{teaserfigure}
-
-
 \maketitle
 
-\input{samplebody-conf}
+\input{introduction}
 
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{sample-bibliography}

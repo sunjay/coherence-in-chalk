@@ -8,23 +8,9 @@
 
 PACKAGE=acmart
 
-SAMPLES = \
-	sample-manuscript.tex \
-	sample-acmsmall.tex \
-	sample-acmlarge.tex \
-	sample-acmtog.tex \
-	sample-sigconf.tex \
-	sample-sigconf-authordraft.tex \
-	sample-sigconf-xelatex.tex \
-	sample-sigplan.tex \
-	sample-sigchi.tex \
-	sample-sigchi-a.tex
+PDF=coherence-in-chalk.pdf
 
-
-PDF = $(PACKAGE).pdf ${SAMPLES:%.tex=%.pdf} acmguide.pdf
-
-all:  ${PDF}
-
+all: ${PDF}
 
 %.pdf:  %.dtx   $(PACKAGE).cls
 	pdflatex $<
@@ -55,28 +41,10 @@ acmguide.pdf: $(PACKAGE).dtx $(PACKAGE).cls
 	while ( grep -q '^LaTeX Warning: Label(s) may have changed' $*.log) \
 	do pdflatex $<; done
 
-sample-sigconf-xelatex.pdf:  sample-sigconf-xelatex.tex   $(PACKAGE).cls ACM-Reference-Format.bst
-	xelatex $<
-	- bibtex $*
-	xelatex $<
-	xelatex $<
-	while ( grep -q '^LaTeX Warning: Label(s) may have changed' $*.log) \
-	do xelatex $<; done
-
-sample-manuscript.pdf \
-sample-acmsmall.pdf \
-sample-acmlarge.pdf \
-sample-acmtog.pdf: samplebody-journals.tex
-
-sample-sigconf.pdf \
-sample-sigconf-authordraft.pdf \
-sample-sigconf-xelatex.pdf \
-sample-sigplan.pdf \
-sample-sigchi.pdf: samplebody-conf.tex
-
+# List the files for each section of the paper here:
+coherence-in-chalk.pdf: introduction.tex
 
 .PRECIOUS:  $(PACKAGE).cfg $(PACKAGE).cls
-
 
 clean:
 	$(RM)  $(PACKAGE).cls *.log *.aux \
